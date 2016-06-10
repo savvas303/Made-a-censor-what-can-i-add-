@@ -1,0 +1,19 @@
+print "what words would you like to be black listed(type Done when over):"
+Bl_word_list=[]
+censored_word=[]
+while True:
+    Bl_word=str(raw_input("blaclist this word:"))
+    if Bl_word.lower()!="done":
+        Bl_word_list.append(Bl_word)
+    else: break
+
+text=str(raw_input("user text:"))
+words=text.split(" ")
+for word in words:
+    if word in Bl_word_list:
+        censored_word.append("*"*len(word))
+    else:
+        censored_word.append(word)
+final_word=" ".join(censored_word)
+print final_word
+
